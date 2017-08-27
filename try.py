@@ -1,28 +1,16 @@
+import random
+ch=raw_input("guess a letter between EVAPORATE :")
+value=random.choice('EVAPORATE')
+print value
+if ch == value :
+    print "guessed correctly"
+else:
+    print "guessed incorrectly"
 
-name = raw_input("enter your name")
+i=raw_input("enter a phrase :")
+if i.strip():
+    i=i.strip()
+    print i
+else:
+    print "hie"
 
-while(name.isalpha()==False):
-        print "name cannot be numeric"
-        name=raw_input("enter name")
-sal = raw_input("enter salutation")
-print "hello" +sal+ "."+name
-while(True):
-    try :
-        age =int(raw_input("enter age"))
-        if(age>0):
-            print "your age is "+ str(age)
-            break
-        else:
-            print "age cannot be 0"
-    except Exception :
-        print "invalid age" +str(Exception)
-
-while(True):
-    try :
-        rating =float(raw_input("enter rating"))
-        print "your age is "+ str(rating)
-        break
-    except Exception :
-        print "invalid rating" +Exception
-message=raw_input("enter message")
-print "message is"+ message
