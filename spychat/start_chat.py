@@ -1,6 +1,7 @@
+from select_friend import select_friend
 from add_status import add_status
 from add_friend import add_friend
-def start_chat(name,age,rating):
+def start_chat(name,age,rating,status):
     from globals import current_status_message
     if not (age >12 and age <50):
         print "Authentication failed Please Try again Later"
@@ -24,6 +25,7 @@ def start_chat(name,age,rating):
                     print "Total no of friends u have ryt now is %d"%(Total_friends)
                 elif (menu_choice == 3):
                     print "u entered send a secret msg block"
+                    u_input=select_friend()
                 elif (menu_choice == 4):
                     print "u entered read a secret msg block"
                 elif (menu_choice == 5):

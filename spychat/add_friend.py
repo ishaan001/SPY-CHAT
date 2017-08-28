@@ -1,15 +1,22 @@
-from globals import friend_age,friend_name,friend_rating
+from globals import friends
 def add_friend():
-    f_name = raw_input("enter your name :")
+    new_friend={
+        'name':'',
+        'salutation':'',
+        'age':0,
+        'rating':0.0,
+        'status':False
+    }
+    new_friend['name'] = raw_input("enter your name :")
 
-    while (f_name.isalpha() == False):
+    while (new_friend['name'].isalpha() == False):
         print "name cannot be numeric"
-        f_name = raw_input("enter name :")
+        new_friend['name'] = raw_input("enter name :")
 
     while (True):
-        f_sal = raw_input("enter salutation what should we call you Mr/Ms. :")
-        if (f_sal == "Mr" or f_sal == "Ms"):
-            f_name=f_sal+"."+f_name
+        new_friend['salutation'] = raw_input("enter salutation what should we call you Mr/Ms. :")
+        if (new_friend['salutation'] == "Mr" or new_friend['salutation'] == "Ms"):
+            f_name=new_friend['salutation']+"."+new_friend['name']
             print "hello you friend name is %s"%(f_name)
             break
         else:
@@ -17,14 +24,14 @@ def add_friend():
 
     while (True):
         try:
-            f_age = int(raw_input("enter age :"))
-            if (f_age > 12 and f_age <50):
-                print "your friend age age is " + str(f_age)
+            new_friend['age'] = int(raw_input("enter age :"))
+            if (new_friend['age'] > 12 and new_friend['age'] <50):
+                print "your friend age age is " + str(new_friend['age'])
                 break
             else:
                 print "age cannot be less than 12 and greater tha 50"
         except Exception:
-            print "invalid age" + str(Exception)
+            print "invalid age it can only be integer"
 
     while (True):
         try:
@@ -35,8 +42,8 @@ def add_friend():
             else:
                 print "rating cannot be greater than 5"
         except Exception:
-            print "invalid rating" + Exception
-    friend_name.append(f_name)
-    friend_age.append(f_age)
-    friend_rating.append(friend_rating)
-    return len(friend_name)
+            print "invalid rating it can't be string"
+    new_friend['status']=True
+    friends.append(new_friend)
+    print "Friends ADDED"
+    return len(friends)
