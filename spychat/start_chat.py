@@ -1,3 +1,4 @@
+#importing all the features of the application which are in different files
 from read_chat_history import read_chat_history
 from add_status import add_status
 from add_friend import add_friend

@@ -1,10 +1,11 @@
 from datetime import datetime
+from colorama import Fore
 import time
 
 t=datetime.now()
 print t.strftime("%A %d. %B %Y")
 print t.strftime("%a, %d %b %Y %H:%M:%S +0000")
-
+print Fore.MAGENTA+"hello"
 
 #locat="Delhi"
 #if __name__=='main':
