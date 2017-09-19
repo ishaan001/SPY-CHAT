@@ -1,5 +1,9 @@
+#this file have been made to read the chat
+
 from select_friend import select_friend
 from default_spy_details import friends
+
+#colorama is used for colour coding
 from colorama import init,Fore,Back
 def read_chat_history():
     init()
@@ -7,6 +11,7 @@ def read_chat_history():
 
     for chat in friends[read_for].chats:
         if chat.sent_by_me:
+            #init() method is used to initialize the object of module COLORAMA
             init()
             print Fore.BLUE+'[%s]'%chat.time.strftime("%d %B %Y")
             print Fore.RED+'%s' %('You said')

@@ -5,6 +5,7 @@ def add_friend():
 
     while(True):
         new_friend.name= raw_input("enter your name :")
+        #user regex which will ask user to add name with first letter capital only
         pattern_nf = '^[A-Z]{1}[a-z\s]+$'
         if (re.match(pattern_nf, new_friend.name) != None):
             print ("your name is :" + new_friend.name)
@@ -13,6 +14,7 @@ def add_friend():
             print "name cannot be numeric and Should start with capital letter"
 
     while (True):
+        #will ask user to add friends salutation
         new_friend.salutation = raw_input("enter salutation what should we call you Mr/Ms. :")
         if (new_friend.salutation == "Mr" or new_friend.salutation == "Ms"):
             f_name=new_friend.salutation+"."+new_friend.name
@@ -22,7 +24,7 @@ def add_friend():
             print "salutation not provided correctly"
 
     while (True):
-
+        # will ask user to add friends age
             new_friend.age = raw_input("enter age :")
             pattern_nf_a = '^[0-9]{1,3}$'
             if (re.match(pattern_nf_a, new_friend.age) != None):
@@ -33,6 +35,7 @@ def add_friend():
                 print "age cannot be 0 or alphabet"
 
     while (True):
+        # will ask user to add friends rating and that too should be less the 5.0 and should be floating point value only
         try:
             new_friend.rating = float(raw_input("enter friend rating :"))
             if (new_friend.rating <= 5.0):
