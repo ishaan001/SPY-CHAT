@@ -1,6 +1,6 @@
-#this file will encrypt the message into resultant image provided by user
+# this file will encrypt the message into resultant image provided by user
 from select_friend import select_friend
-#steganography is used  to encrypt the data inside the image
+# steganography is used  to encrypt the data inside the image
 
 from steganography.steganography import Steganography
 
@@ -9,8 +9,11 @@ from steganography.steganography import Steganography
 from datetime import datetime
 from default_spy_details import friends,ChatMessage
 
-#re module is used to add regex pattern
+# re module is used to add regex pattern
 import re
+
+# colorama is used for colour coding
+from colorama import Fore,init
 def send_message():
     friend_choice=select_friend()
     while(True):
@@ -32,12 +35,18 @@ def send_message():
         else:
             print "please provide image with jpg format"
 
-    encpyt_text=raw_input("enter the message which u want to encrypt\n")
+    encpyt_text=raw_input("enter the message which u want to encrypt")
+    if(len(encpyt_text)!=0):
+        Steganography.encode(original_img,result_img,encpyt_text)
+        new_chat = ChatMessage(encpyt_text, True)
+        friends[friend_choice].chats.append(new_chat)
+        t = datetime.now()
+        init()
+        print Fore.CYAN+"message sent successfully at ",
+        print str(t.strftime("%A %d. %B %Y"))
 
-    #encryption process
-    Steganography.encode(original_img,result_img,encpyt_text)
+    else:
+        init()
+        print Fore.CYAN+'image do no contain any text please provide so!! BYE :D'+Fore.RESET
 
-    new_chat = ChatMessage(encpyt_text, True)
-    friends[friend_choice].chats.append(new_chat)
-    t=datetime.now();
-    print "message sent successfully at "+str(t.strftime("%A %d. %B %Y"))
+
