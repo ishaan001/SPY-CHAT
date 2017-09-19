@@ -4,7 +4,7 @@ from select_friend import select_friend
 # in this it used for decryption process
 from steganography.steganography import Steganography
 from default_spy_details import friends,ChatMessage
-
+from datetime import datetime
 import re
 
 # colorama is used for colour coding
@@ -37,7 +37,7 @@ def read_message():
         print " is ",
         print (friends[sender].count)
 
-        if(len(word_speak)>4):
+        if(len(word_speak)>100):
             print Fore.CYAN+friends[sender].name,
             print Fore.RED+"speaks too much ! HENCE HE's removed form your friend list "+Fore.RESET
             friends.remove(friends[sender])

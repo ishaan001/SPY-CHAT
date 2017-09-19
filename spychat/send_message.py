@@ -5,8 +5,8 @@ from select_friend import select_friend
 from steganography.steganography import Steganography
 
 # datetime module is used to get the date and time
-
 from datetime import datetime
+
 from default_spy_details import friends,ChatMessage
 
 # re module is used to add regex pattern
@@ -44,6 +44,7 @@ def send_message():
         init()
         print Fore.CYAN+"message sent successfully at ",
         print str(t.strftime("%A %d. %B %Y"))
+        print Fore.RESET
 
     else:
         init()
