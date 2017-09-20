@@ -4,7 +4,7 @@ def add_friend():
     new_friend=Spy(" "," ",0,0.0)
 
     while(True):
-        new_friend.name= raw_input("enter your name :")
+        new_friend.name= raw_input("enter your friend name :")
         #user regex which will ask user to add name with first letter capital only
         pattern_nf = '^[A-Z]{1}[a-z\s]+$'
         if (re.match(pattern_nf, new_friend.name) != None):
@@ -15,7 +15,7 @@ def add_friend():
 
     while (True):
         #will ask user to add friends salutation
-        new_friend.salutation = raw_input("enter salutation what should we call you Mr/Ms. :")
+        new_friend.salutation = raw_input("enter salutation of your fiend what should we call him6 Mr/Ms. :")
         if (new_friend.salutation == "Mr" or new_friend.salutation == "Ms"):
             f_name=new_friend.salutation+"."+new_friend.name
             print "hello you friend name is %s"%(f_name)
