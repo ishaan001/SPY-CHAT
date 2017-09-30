@@ -8,6 +8,10 @@
   <li>Send a Secret message encrypted inside a image</li>
   <li>read a secret message Decrypted inside a image</li>
   <li>read chat history with the date and time of the send and recieved message</li>
+  <li>delete a spy if he's talking too much</li>
+  <li>Handle for cases when the image contains no secret message</li>
+  <li> printing the chat history using different colors</li>
+  <li>appropriate message has be handled for special words such as SOS, SAVE ME</li>
   <li>Exiting application</li>
  </ul>
  
